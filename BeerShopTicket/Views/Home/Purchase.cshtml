@@ -1,0 +1,48 @@
+﻿@model BeerShopTicket.Models.Home.PurchaseViewModel
+@{
+    ViewBag.Title = "Purchase";
+}
+
+<div class="contact">
+    <div class="section group">
+
+        <div class="col_1_of_3 contact_1_of_3">
+            <div class="contact-form">
+                <div class="blog-leftgrids">
+                    <div class="image group">
+                        <h3>@Model.Title</h3>
+                        <div class="grid images_3_of_1">
+                            <a href=""><img src="@Model.ImageUrl" alt="" /></a>
+                        </div>
+                    </div>
+                </div>
+
+                @using (Html.BeginForm("Purchase", "Home", FormMethod.Post))
+                {
+                    <div>
+                        <span>@Html.EditorFor(m => m.FName, new { htmlAttributes = new { @class = "textbox", placeholder = "Nome" } })</span>
+                    </div>
+                    <div>
+                        <span>@Html.EditorFor(m => m.LName, new { htmlAttributes = new { @class = "textbox", placeholder = "Sobrenome" } })</span>
+                    </div>
+                    <div>
+                        <span>@Html.EditorFor(m => m.Email, new { htmlAttributes = new { @class = "textbox", placeholder = "E-mail" } })</span>
+                    </div>
+                    <div>
+                        <input class="btn btn-warning btn-lg" value="Comprar ticket ($20)" type="submit" />
+                    </div>
+
+                }
+            </div>
+        </div>
+
+        <div class="col_1_of_3 contact_1_of_3">
+            <div class="contact_info">
+                <h3>Find Us Here</h3>
+                <div class="map">
+                    <iframe width="100%" height="250" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.co.in/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Lighthouse+Point,+FL,+United+States&amp;aq=4&amp;oq=light&amp;sll=26.275636,-80.087265&amp;sspn=0.04941,0.104628&amp;ie=UTF8&amp;hq=&amp;hnear=Lighthouse+Point,+Broward,+Florida,+United+States&amp;t=m&amp;z=14&amp;ll=26.275636,-80.087265&amp;output=embed"></iframe><br><small><a href="https://maps.google.co.in/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=Lighthouse+Point,+FL,+United+States&amp;aq=4&amp;oq=light&amp;sll=26.275636,-80.087265&amp;sspn=0.04941,0.104628&amp;ie=UTF8&amp;hq=&amp;hnear=Lighthouse+Point,+Broward,+Florida,+United+States&amp;t=m&amp;z=14&amp;ll=26.275636,-80.087265" style="color:#666;text-align:left;font-size:12px">View Larger Map</a></small>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

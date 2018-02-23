@@ -1,0 +1,27 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model  BeerShopTicket.Models.Home.IndexViewModel
+
+<div class="blog">
+    <h2>Eventos</h2>
+    @foreach (var item in Model.Events)
+    {
+        <div class="blog-leftgrids">
+            <div class="image group">
+                <div class="grid images_3_of_1">
+                    <a href=""><img src="@item.ImageUrl" alt="" /></a>
+                </div>
+                <div class="grid blog-desc">
+                    <h4><span>@item.Title</span></h4>
+                    <h4><span class="glyphicon-calendar"></span> @item.EventDate.ToString()</h4>
+                    <h1 style="color:red;font-size:larger">R$@item.Price.ToString() </h1>
+                    <p>@item.LongDescription</p>
+                    <a href="@Url.Action("Purchase","Home", new { id = item.id})" class="button">COMPRAR</a>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+
